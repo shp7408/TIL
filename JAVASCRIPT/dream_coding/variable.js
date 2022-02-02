@@ -6,7 +6,7 @@
 // 추가적으로, js 엔진을 더 효율적으로 사용할 수 있다
 'use strict';
 
-// 2. Variable : 변수. 변경될 수 있는 값
+// 2. Variable : 변수. 변경될 수 있는 값  rw(read/write)
 // let (added in ES6)
 // app 을 실행하면, app 마다 사용할 수 있는 메모리가 제한적으로 할당된다.
 
@@ -36,15 +36,21 @@ age = 4;
 console.log(age);
 var age;
 
-// 3. Constants
+// 3. Constants r(read only)
+// 왠만하면, const 를 사용하는 것을 추천한다.  
 // 값이 절대 바뀌지 않는 변수
 // 값을 선언함과 동시에 할당한 후, 값을 변경할 수 없다.
+
+const daysInWeek = 7;
+const maxNumber = 5;
+
+// note !!
+// Immutable data types : premitive types, frozen objects (i.e. object.freeze())
+// Mutable data types : all objects by default are mutable in JS
 // favor immutable data type always for a few reasons :
 //  - security
 //  - thread safety
 //  - reduce human mistakes
-const daysInWeek = 7;
-const maxNumber = 5;
 
 // 4. Variable types
 // primitive, single item : number, string, boolean, null, undefined, symbol
