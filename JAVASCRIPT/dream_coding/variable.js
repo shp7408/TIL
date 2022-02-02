@@ -1,6 +1,9 @@
 // 1. Use strict
 // added in ES5
 // use this for Vanila Javascript
+// 자바스크립트는 유연하다. 하지만, 유연하다는 것은 위험하다는 것이라고도 할 수 있다.
+// 'use strict'를 사용하면, 엄격한 strict 범위 내에서 js 를 사용할 수 있다.
+// 추가적으로, js 엔진을 더 효율적으로 사용할 수 있다
 'use strict';
 
 // 2. Variable
