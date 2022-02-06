@@ -105,3 +105,96 @@ console.log('' == false);
 console.log('' === false);// type 이 다름
 console.log(null == false); // true
 console.log(null === false);// type 이 다름
+
+// 8. Conditional operators : if
+// if, else if, else
+const name2 = 'sh';
+if (name2 === 'sh') {
+    console.log("안녕 서현");
+} else if (name2 === 'coder') {
+    console.log("너는 코더구나");
+} else {
+    console.log("몰라");
+}
+
+//  9. Ternary operator :? 
+// condition ? value1 : value2;
+console.log (name2 === 'sh' ? 'yes' : 'no');
+
+// 10. Switch statement
+// use for multiple if checks
+// use for enum-like value check
+// use for multiple type checks in TS
+const browser = 'IE';
+switch (browser) {
+    case 'IE' :
+        console.log('go away!');
+        break;
+
+    case 'Chrome' :
+    case 'Firefox':
+        console.log('짱이지');
+        break;
+
+    default:
+        console.log('다 똑가타');
+        break;
+}
+
+// 11. Loops 
+// while loop, while the condition is truthy,
+// body code is executed.
+let i = 3;
+while (i > 0) {
+    console.log(`while: ${i}`);
+    i--;
+}
+
+// do while loop, body code is executed first,
+// then check the condition. 블럭을 먼저 실행하고, 조건 체크하고 싶다면 사용
+do {
+    console.log(`do while: ${i}`);
+    i--;
+} while (i > 0);
+
+// for loop, for(begin; condition; step)
+for (i = 3; i > 0 ; i--) {
+    console.log(`for: ${i}`);
+}
+
+for (let i = 3; i > 0; i = i - 2) {
+    // inline variable declaration
+    console.log(`inline variable for: ${i}`);
+}
+
+// nested loops
+for (let i = 0; i <10; i++) {
+    for (let j = 0; j <10; j++) {
+        console.log(`i: ${i}, j:${j }`);
+    }
+}
+
+// break, continue
+//  01. iterate from 0 to 10 and print only even numbers
+// (use continue)
+
+// for (let i = 0; i<=10; i = i+2) {
+//     console.log(`${i}`);
+// }
+    for(let i = 0; i <11; i++) {
+        if(i % 2 !== 0) {
+            continue;
+        }
+        console.log(`q1. ${i}`);
+    }
+
+// 02. iterate from 0 to 10 and print numbers until reaching 8
+// (use break)
+for (let i = 0; i<=10; i++) {
+    if (i > 8) {
+        break;
+    }
+    console.log(`${i}`);
+}
+
+
