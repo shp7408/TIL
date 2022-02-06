@@ -2,10 +2,8 @@
 console.log('my' + ' cat');
 console.log('1' + 2);
 console.log(`string literals :
-
 ''''
 1 + 2 = ${1+2}
-
 `);
 
 console.log('sh\'s \n \t book');
@@ -30,13 +28,18 @@ const postIncrement = counter++; // postIncrement 에 먼저 3을 할당해두�
 // counter = counter + 1;
 console.log(`postIncrement: ${postIncrement}, counter: ${counter}`);
 
+const pretDecrement = --counter; //
+console.log(`pretDecrement: ${pretDecrement}, counter: ${counter}`);
+const postDecrement = counter--; 
+console.log(`postDecrement: ${postDecrement}, counter: ${counter}`);
+
 // 4. Assignment operators
 let a = 3;
 let b = 6;
-a += b; // x = a + b;
-a -= b; // x = x - y;
-a *= b; // x = x * y;
-a /= b; // x = x / y;
+a += b; // a = a + b;
+a -= b; // a = x - y;
+a *= b; // a = x * y;
+a /= b; // a = x / y;
 
 // 5. Comparison operators
 console.log(10 < 6); // less than
@@ -54,7 +57,7 @@ console.log(`or : ${valueA || valueB || check()}`);
 // 그래서 복잡하고, 헤비한 expression 이나 메서드를 가장 뒤에 처리하도록 한다.
 
 // && (and), finds the irst falsy value
-console.log(`and : ${valueA || valueB || check()}`);
+console.log(`and : ${valueA && valueB && check()}`);
 // often used to compress long if-statement
 // nullableObject && nullableObject.something
 
@@ -72,3 +75,33 @@ function check() {
     return true;
 }
 
+// ! (not)
+console.log(!valueA);
+
+// 7. Equality
+const stringFive = '5';
+const numberFive = 5;
+
+// == loose equality, with type conversion
+console.log(stringFive == numberFive);
+console.log(stringFive != numberFive);
+
+// === strict equality, no type conversion
+console.log(stringFive === numberFive);
+console.log(stringFive !== numberFive);
+
+// obejct equality by reference
+const sh1 = { name: 'seohyun' };
+const sh2 = { name: 'seohyun' };
+const sh3= sh1;
+console.log(sh1 == sh2);
+console.log(sh1 === sh2);
+console.log(sh1 === sh3); // true : sh1 과  같은 ref value 를 가지고 있음
+
+// equality - puzzler
+console.log(0 == false);
+console.log(0 === false); // type 이 다름
+console.log('' == false);
+console.log('' === false);// type 이 다름
+console.log(null == false); // true
+console.log(null === false);// type 이 다름

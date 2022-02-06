@@ -6,7 +6,7 @@
 // 추가적으로, js 엔진을 더 효율적으로 사용할 수 있다
 'use strict';
 
-// 2. Variable : 변수. 변경될 수 있는 값  rw(read/write)
+// 2. Variable : 변수. 변경될 수 있는 값  rw(read/write) : 메모리를 읽고, 쓰는 것이 가능하다.
 // let (added in ES6)
 // app 을 실행하면, app 마다 사용할 수 있는 메모리가 제한적으로 할당된다.
 
