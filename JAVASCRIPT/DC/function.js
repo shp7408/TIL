@@ -106,22 +106,22 @@ console.log(sumAgain(1, 3));
 // 2. Callback function using function expression
 function randomQuize(answer, printYes, printNo) {
     if (answer === 'love you') {
-        printYes();
+        printYes(answer);
     } else {
-        printNo();
+        printNo(answer);
     }
 }
 
 // anonymous function
-const printYes = function() {
-    console.log('Yes!');
+const printYes = function(answer) {
+    console.log('Yes!' + answer);
 };
 
 // named function
 // better debugging in debegger's stack traces
 // recursions : 함수 안에서 자신의 함수를 실행시킬 때, 사용하면 좋다.
-const printNo = function print() {
-    console.log('no!');
+const printNo = function print(answer) {
+    console.log('no!' + answer);
 };
 
 randomQuize('wrong', printYes, printNo);
@@ -140,6 +140,8 @@ const add1 = (a, b) => a + b;
 const add2 = function(a, b) {
     return a + b;
 }
+
+console.log(add2(100, 1000));
 
 //블럭으로 사용하고 싶은 경우, return 으로 값을 보내주어야 함
 const simpleMultiply = (a, b) => {
