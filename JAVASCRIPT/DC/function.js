@@ -22,7 +22,7 @@ log('Hello@');
 log(1234);
 
 //  2. Parameters
-// premitive parameters : passed by balue
+// premitive parameters : passed by value
 // object parameters: passed by reference
 function changeName(obj) {
     obj.name = 'coder';
@@ -68,14 +68,16 @@ const result = sum(1, 2);
 console.log(`sum ${result}`);
 
 //  7. Early return,  early exit
-// bad
+// return : 함수 실행을 종료하고, 주어진 값을 함수 호출 지점으로 반환한다.
+
+// bad case
 function upgradeUserB(user) {
     if(user.point > 10) {
         // long upgrade logic.. 
     }
 }
 
-// good
+// good case
 function upgradUserG(user) {
     if (user.point <= 10) {
         return;
@@ -83,11 +85,10 @@ function upgradUserG(user) {
     // long upgrade logic...
 }
 
-// First-class function
-// functions are treated like any other variable
-// can be assigned as a value to variable
-// can be passed as an argument to other functions.
-// can be returned by another function
+// First-class function : 일급 함수
+// 함수를 다른 변수와 동일하게 다루는 언어를 일급 함수를 가졌다고 표현한다.
+// 일급 함수를 가진 언어에서는 함수를 다른 함수에 인수로 제공하거나,
+// 함수가 함수를 반환할 수 있으며, 변수에도 할당이 가능하다.
 
 //  1. Function expression
 // a function declaration can be called earlier than it is defined. 
@@ -181,3 +182,17 @@ function calculate (command, a, b) {
 }
 
 console.log(calculate("add", 1, 3));
+
+// 함수 반환
+function sayHello() {
+    return function() {
+        console.log("+++++++++++ Hello!!!!!");
+    }
+}
+
+sayHello(); // sayHello 를 직접 호출하면, 반환된 함수를 호출하지 않고, 함수 자체를 반환한다.
+
+const sayH = sayHello(); // 그러므로, 반환된 함수를 다른 변수에 저장하여 사용해야 한다.
+sayH();
+
+sayHello()(); // 혹은 이중 괄호를 사용한다.
