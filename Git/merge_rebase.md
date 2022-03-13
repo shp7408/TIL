@@ -12,4 +12,3 @@ git history를 살펴보면, branch의 base가 어디에 있는지 확인할 수
 - B지점을 가진 branch가 D, E 커밋을 진행한다.
 - C지점으로 base를 이동하기 위해 branch에서 C지점으로 rebase를 한다.
 - C지점으로 rebase 되면, 기존 D, E 커밋은 새롭게 정렬되어 C지점 이후로 변경된다.
-- 
