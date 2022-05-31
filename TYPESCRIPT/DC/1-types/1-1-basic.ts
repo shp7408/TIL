@@ -58,8 +58,15 @@
     // never : 절대 리턴하는 값이 없음.
     function throwError(message: string): never {
         // message -> server (log)
-        // throw new Error(message); // 어플리케이션에서 에러 핸들링 시, 자주 사용하는 변수
+        throw new Error(message); // 어플리케이션에서 에러 핸들링 시, 자주 사용하는 변수 -> never
         // while(true) {
         // }
     }
+    // let neverEnding: never;// 이렇게 사용하지 않음
+
+    // object : 원시 타입을 제외한 모든 object 타입을 전달할 수 있는 변수 -> 모든 obj를 할당할 수 있다? = 나쁜냄새
+    let obj: object;
+    function acceptSomeObject(obj: object) {}
+    acceptSomeObject({ name: 'ellie' });
+    acceptSomeObject({ animal: 'dog' });
 }
