@@ -29,7 +29,7 @@
     }
 
     // JavaScript => TypeScript
-    // 둘 다에서 사용할 수 있는 타입이 더해진 함수 정의 방법
+    // JS, TS 둘 다에서 사용할 수 있는 타입이 더해진 함수 정의 방법
 
     // 1. Optional parameter
     function printName(firstName: string, lastName?: string) {
