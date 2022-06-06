@@ -34,13 +34,13 @@
     };
 
     type LoginState = SuccessState | FailState;
-    function login(id: string, password: string): LoginState {
-        return {
-            response: {
-                body: 'logged in!',
-            },
-        };
-    };
+    // function login(id: string, password: string): LoginState {
+    //     return {
+    //         response: {
+    //             body: 'logged in!',
+    //         },
+    //     };
+    // };
 
     // printLoginState(state: LoginState)
     // success -> body
