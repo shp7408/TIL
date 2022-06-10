@@ -1,24 +1,42 @@
-## Docker(도커)란?
-정의 : **IT 소프트웨어인 "Docker"는 Linux 컨테이너를 만들고 사용할 수 있도록 하는 컨테이너화 기술**
+> ## Docker(도커)란?
+**"Docker"는 Linux 컨테이너를 만들고 사용할 수 있도록 하는 컨테이너화 기술**
 
-## Linux 컨테이너
-Linux 컨테이너는 시스템의 나머지 부분과 분리된 1개 이상의 프로세스 세트. 이러한 프로세스를 실행하는 데 필요한 모든 파일은 고유한 이미지에서 제공되므로, Linux 컨테이너는 개발 단계에서 테스트, 프로덕션에 이르기까지 이식성과 일관성을 유지할 수 있음. 즉, 로컬, dev, stg, prod 등 까지 같은 환경을 유지할 수 있도록 함.
+<br>
 
-## Docker : Image (이미지)
+> ## Linux 컨테이너
+**표준화된 소프트웨어 유닛** 코드를 실행하기 위한 코드 패키지와 그 코드를 실행하는데 필요한 종속성을 의미한다.
+
+A standardized unit of software. A package of code and dependencies to run that code (e.g. NodeJS code + the NodeJS runtime)
+
+동일한 컨테이너 -> 완전히 동일한 application, execution behavior!
+
+The same container always yields **the exact same application and execution behavior!** No matter where or by whom it might be executed.
+
+<br>
+
+> ## 왜, Containers를 사용하는가?
+
+즉, 왜 independent, standardized "application package"가 필요한걸까?
+- prod 환경과 같은 환경에서 테스트를 해야 하기 때문
+- 팀/ 회사 동료들과 같은 환경에서 작업하기 위해
+- 같은 로컬 환경에서 각기 다른 프로젝트의 환경들 간에 충돌을 막기 위해 ex) python2 / python3
+
+<br>
+
+> ## Image (이미지)
 **서비스 운영에 필요한 서버 프로그램, 소스코드 및 라이브러리, 컴파일된 실행 파일을 묶는 형태** 즉, 컨테이너 생성 및 실행에 필요한 모든 파일과 설정값을 지닌 것으로, 더 이상의 의존성 파일을 컴파일하거나, 이것 저것 설치할 필요 없는 상태의 파일을 의미한다.
 
-## Docker : Layer (레이어)
+<br>
+
+> ## Layer (레이어)
 레이어란, 기존 이미지에 추가적인 파일이 필요할 때, 다시 전체를 다운받는 방식이 아닌, 해당 파일을 추가하기 위한 개념.
 이미지는, 여러 개의 읽기 전용(read only) layer 로 구성되고, 파일이 추가되면, 새로운 layer가 생성된다.
 
-## Docker : Container(컨테이너)
-컨테이너란, **이미지(Image)를 실행한 상태로,** 응용 프로그램의 종속성과 함께 응용프로그램 자체를 패키징 혹은 캡슐화하여, 격리된 공간에서 프로세스를 동작시키는 기술
+<br>
 
-참고 : https://hoon93.tistory.com/48  
-http://pyrasis.com/Docker/Docker-HOWTO
+> ## 도커 파일 작성하기
+Node.js 애플리케이션을 도커 환경에서 실행하려면 먼저 이미지를 생성하고, 생성된 이미지를 이용해 컨테이너를 실행한 다음, 그 컨테이너 안에서 Node.js 애플리케이션을 실행해야 한다.
 
-## 도커 파일 작성하기
-Node.js 애플리케이션을 도커 환경에서 실행하려면 먼저 이미지를 생성하고, 생성된 이미지를 이용해 컨테이너를 실행한 다음, 그 컨테이너 안에서 Node.js 애플리케이션을 실행해야 한다. 
 > - 이미지 생성을 위한 Dockerfile 작성
 > - 이미지 생성
 > - 생성된 이미지를 이용하여, 컨테이너 실행
