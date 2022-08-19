@@ -41,5 +41,5 @@
 
 
 [저자 소스코드 제공]: https://github.com/jojoldu/freelec-springboot2-webservice
-[본인 소스코드]: https://github.com/jojoldu/freelec-springboot2-webservice
+[본인 소스코드]: https://github.com/shp7408/Spring-prj-220819
 [Spring-prj-220819 레포]: https://github.com/jojoldu/freelec-springboot2-webservice
