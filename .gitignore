@@ -1,2 +1,7 @@
 
 .DS_Store
+.idea/aws.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/TIL.iml
+.idea/vcs.xml
