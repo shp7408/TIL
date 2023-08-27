@@ -55,8 +55,13 @@ Git에는 3가지 영역 (Staging Area)이 있다.
 
 ## git add
 > ``git add``
-
 를 하게 되면, Working Directory에서 작업한 내용이 Staging Area 로 올라가게 된다.
+
+- 파일 하나만 담기
+> ``git add 파일.yaml``
+
+- 현재 디렉토리의 모든 파일 담기
+> ``git add .``
 
 ## unstaging
 
@@ -65,3 +70,33 @@ Git에는 3가지 영역 (Staging Area)이 있다.
 > ``git rm --cashed {unstaging시킬 파일 명}``
 
 입력하면, unstaging 된다.
+
+## git 에게 맡기지 않을 것들
+
+- 빌드 결과물, 라이브러리의 경우는 포함할 필요가 없다.
+- 보안상 민감한 정보를 담은 파일은 포함하면 안 된다.
+- .gitignore 파일로 이것을 설정할 수 있다.
+- .gitignore 형식
+    ```bash
+    # 모든 file.c
+    file.c
+
+    # 최상위 폴더의 file.c
+    /file.c
+
+    # 모든 .c 확장자 파일
+    *.c
+
+    # .c 확장자이지만 무시하지 않을 파일 - ! 느낌표 표시
+    !not_ignore_this.c
+
+    # logs란 이름의 파일 또는 폴더와 그 내용들
+    logs
+
+    # logs란 이름의 폴더와 그 내용들
+    logs/
+
+    # logs 폴더 바로 안의 debug.log와 .c 파일들
+    logs/debug.log
+    logs/*.c
+    ```
